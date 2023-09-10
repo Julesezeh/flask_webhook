@@ -1,9 +1,8 @@
-from app import create_app
+from app import app
 from flask import request
 
-app = create_app()
 
-@app.route("/")
+@app.route("/", methods=["POST"])
 def index():
     data = request.get_json()
     return {"Info":data}
